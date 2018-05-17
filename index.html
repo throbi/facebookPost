@@ -1,0 +1,440 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Facebook Post with plain HTML & CSS</title>
+    <style>
+    .facebookPost {
+        max-width: 500px;
+        margin: auto;
+        box-shadow: 0px 0px 2px 2px #aaaaaa11;
+    }
+
+    .post {
+        background-color: #FFFFFF;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-width: 1px;
+        border-color: #dadadb;
+        border-style: solid;
+        border-bottom-width: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow: hidden;
+    }
+
+    .postHeader {
+        height: 40px;
+    }
+
+    .postContent {
+        margin-top: 6px;
+    }
+
+    .feedback {
+        background-color: #F2F3F5;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-width: 1px;
+        border-color: #dadadb;
+        border-style: solid;
+        padding: 10px;
+    }
+
+    .settings {
+        float: right;
+        margin-top: -8px;
+    }
+
+    .dots {
+        color: #6F717A;
+        font-size: 33px;
+        font-family: times;
+        letter-spacing: -2px;
+        text-decoration: none;
+    }
+
+    .dots:hover {
+        color: #343434;
+        font-size: 33px;
+        font-family: times;
+        letter-spacing: -2px;
+        text-decoration: none;
+    }
+
+    .authorContainer {
+        float: left;
+        padding-top: 10px;
+        padding-left: 5px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .authorImage {
+        border-radius: 50%;
+        border-color: #365899;
+        width: 40px;
+        height: 40px;
+        padding-right: 5px;
+        vertical-align: middle;
+    }
+
+    .postDetails {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .authorName {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 19px;
+    }
+
+    .postDate {
+        color: #616770;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 19px;
+    }
+
+    .publicPostIcon {
+        font-size: 10px;
+        line-height: 16px;
+        vertical-align: top;
+    }
+
+    .postBody {
+        color: #1d2129;
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 6px;
+        line-height: 19.32px;
+    }
+
+    .referencedArticle {
+        overflow: hidden;
+        margin-bottom: 6px;
+        box-shadow: 0px 1px 2px 1px #aaaaaa44;
+    }
+
+    .referencedArticleImage {
+        border-color: #365899cc;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        cursor: pointer;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .referencedArticleBody {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .referencedArticleTitle {
+        font-family: Georgia, serif;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #1d2129;
+        line-height: 18px;
+        text-decoration-style: solid;
+        text-decoration-line: none;
+    }
+
+    .referencedArticleText {
+        cursor: pointer;
+        color: #1d2129;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .referencedArticleAuthor {
+        color: #606770;
+        font-size: 12px;
+        line-height: 14px;
+        padding-top: 13px;
+        text-transform: uppercase;
+    }
+
+    .referencedArticleButton {
+        float: right;
+        position: relative;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        background-color: #f6f7f9;
+        border-color: #ced0d4;
+        border-radius: 2px;
+        border-style: solid;
+        border-width: 1px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 700;
+        justify-content: center;
+        line-height: 22px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-right: 8px;
+        padding-left: 8px;
+        text-align: center;
+        text-decoration-color: #4b4f56;
+        color: #4b4f56;
+    }
+
+    .likeShareCommentButtons {
+        cursor: pointer;
+        padding-top: 6px;
+        color: #64676E;
+        font-size: 13px;
+        font-weight: 600;
+        justify-content: center;
+        text-align: center;
+        width: 140px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .beneStudioButton {
+        cursor: pointer;
+        padding-top: 6px;
+        color: #64676E;
+        font-size: 13px;
+        font-weight: 600;
+        justify-content: left;
+        text-align: left;
+        display: inline-block;
+    }
+
+    .likeShareCommentIcon {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .beneStudioIcon {
+        width: 20px;
+        width: 20px;
+        padding-left: 4px;
+        padding-right: 0px;
+        margin-right: -6px;
+    }
+
+    .likeShareCommentText {
+        margin-top: -10px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .feedbackSummary {
+        width: 95%;
+        border-bottom-style: solid;
+        border-bottom-color: #dedede;
+        border-bottom-width: 1px;
+        padding-bottom: 5px;
+        color: 365899;
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .feedbackSummaryIcons {
+        display: inline-block;
+    }
+
+    .feedbackSummaryIcon {
+        margin-right: -8px;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #F2F3F5;
+    }
+
+    .feedbackSummaryText {
+        display: inline-block;
+        padding-left: 10px;
+        vertical-align: middle;
+        margin-top: -15px;
+    }
+
+    .feedbackSummaryDropdown {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: -15px;
+        padding-left: 25px;
+    }
+
+    .feedbackCount {
+        width: 95%;
+        padding-bottom: 5px;
+        color: 365899;
+        font-size: 11px;
+        line-height: 16px;
+        padding-top: 5px;
+        padding-bottom: 15px;
+    }
+
+    .commenterIcon {
+        border-radius: 50%;
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        border-color: #bbbbbb;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .otherCommenterIcon {
+    	border-radius: 50%;
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        border-color: #bbbbbb;
+        border-style: solid;
+        border-width: 1px;
+        vertical-align: top;
+    }
+
+    .commentField {
+        border-radius: 25px;
+        background-color: white;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #bbbbbb;
+        padding: 7px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: -20px;
+        width: 425px;
+        font-size: 13px;
+        color: grey;
+    }
+
+    .commentHint {
+        color: grey;
+        font-size: 10px;
+        padding-left: 40px;
+        padding-bottom: 15px;
+    }
+
+    .commentContainer {
+    	vertical-align: top;
+    }
+
+    .comment {
+        border-radius: 20px;
+        background-color: white;
+        padding: 7px;
+        display: inline-block;
+        width: 400px;
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    .otherCommenterName {
+    	color: #365899;
+    	font-weight: 600;
+    }
+
+    .commentFeedback {
+        color: #365899;
+        font-size: 11px;
+        padding-left: 40px;
+        padding-bottom: 15px;
+    }
+
+    body {
+        background-color: #E9EAED;
+        font-family: helvetica, arial, sans-serif;
+    }
+
+    a {
+        color: #365899;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="facebookPost">
+        <div class="post">
+            <div class="postHeader">
+                <div class="authorContainer">
+                    <a tabindex="-1" target="" href="#">
+                        <img class="authorImage" src="https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-1/p50x50/1010076_477783955633350_1900224762_n.png?_nc_cat=0&oh=7a5b024dde35aee63da6d62c70b2a251&oe=5B961D34" alt="React">
+                	</a>
+                    <div class="postDetails">
+                        <a class="authorName">React</a>
+                        <div class="postDate">2016. december 7. &#x00B7;
+                            <spa class="publicPostIcon">&#x1f30e;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="settings"><a href="#" class="dots">...</a></div>
+            </div>
+            <div class="postContent">
+                <p class="postBody">
+                    Upgrading your project to use a newer version of React Native is now easier than ever! React Native now uses Git to resolve any conflicts during the upgrade process.
+                </p>
+                <div class="referencedArticle">
+                    <div class="referencedArticleImage">
+                        <img src="https://scontent-vie1-1.xx.fbcdn.net/v/t45.1600-4/cp0/q90/c0.1.1200.628/s480x480/14965992_6059722119230_5822006144582811648_n.png.jpg?_nc_cat=0&efg=eyJxZV9ncm91cHMiOlsibm9fc2FmZV9pbWFnZV9mb3JfYWRzX2ltYWdlIl19&oh=628b43ababdffcd6890a3823f4c88b22&oe=5B9C8BF7" />
+                    </div>
+                    <div class="referencedArticleBody">
+                        <h1 class="referencedArticleTitle">Easier Upgrades Thanks to Git</h1>
+                        <div class="referencedArticleText">Upgrading to new versions of React Native has been difficult. You might have seen something like this before:</div>
+                        <div class="referencedArticleAuthor">FACEBOOK.GITHUB.IO
+                            <button class="referencedArticleButton">További információ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="likeShareCommentButtons">
+                <img src="pix/like.png" class="likeShareCommentIcon" />
+                <div class="likeShareCommentText">Tetszik</div>
+            </div>
+            <div class="likeShareCommentButtons">
+                <img src="pix/comment.png" class="likeShareCommentIcon" />
+                <div class="likeShareCommentText">Hozzászólás</div>
+            </div>
+            <div class="likeShareCommentButtons">
+                <img src="pix/comment.png" class="likeShareCommentIcon" />
+                <div class="likeShareCommentText">Megosztás</div>
+            </div>
+            <div class="beneStudioButton">
+                <img class="beneStudioIcon" src="pix/benestudio.png" />
+                <div class="likeShareCommentText">&#x25bc;</div>
+            </div>
+        </div>
+        <div class="feedback">
+            <div class="feedbackSummary">
+                <div class="feedbackSummaryIcons">
+                    <img class="feedbackSummaryIcon" src="pix/liked.png" />
+                    <img class="feedbackSummaryIcon" src="pix/love.png" />
+                    <img class="feedbackSummaryIcon" src="pix/wow.png" />
+                </div>
+                <div class="feedbackSummaryText">Balaji Krishnan, Fabi Ferreira és további 143 ember</div>
+                <div class="feedbackSummaryDropdown">A legérdekesebbek &#x25bc;</div>
+            </div>
+            <div class="feedbackCount">6 megosztás</div>
+            <div class="commentContainer">
+                <img class="commenterIcon" src="pix/benestudio.png" />
+                <div class="commentField">Hozzászólás írása...</div>
+                <div class="commentHint">A közzetételhez nyomd le az Enter billentyűt.</div>
+            </div>
+            <div class="commentContainer">
+                <img class="otherCommenterIcon" src="pix/benestudio.png" />
+                <div class="comment"><span class="otherCommenterName">Xiao Chang Di</span> I'm a developer from China. We're using React at the moment. I'd like to ask if we're a small company that doesn't involve competition with feacbook. Can we use React safely?</div>
+            </div>
+            <div class="commentFeedback">
+                Tetszik &#x00B7; Válasz &#x00B7; 33 hete
+            </div>
+            <div class="commentFeedback">
+                <b>&#x2937;</b> 1 válasz
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
